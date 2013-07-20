@@ -58,7 +58,7 @@
             <h2>Task</h2>
           </div>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p><blockquote>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</blockquote></p>
 
 
 
@@ -75,27 +75,48 @@
           </div>
 <p>
 <strong>
- Eliel Saarinen
+ Eliel Saarinen  (August 20, 1873 – July 1, 1950)
 </strong>
 
 
 
 <br>
 
-Eliel Saarinen blablabla
-gg
-g
-g
-g
-</p><p>
-g
-<br>
+<div class="row-fluid">
+                       <div class="span4">
+<img id="es" class="img-polaroid" style="border-radius:20px" src="images/Eliel_Saarinen.jpg"> </div>
+
+                       <div class="span8">
+<blockquote>Gottlieb Eliel Saarinen was a Finnish architect who became famous for his art nouveau buildings in the early years of the 20th century. Saarinen was educated in Helsinki at the Helsinki University of Technology. From 1896 to 1905 he worked as a partner with Herman Gesellius and Armas Lindgren at the firm Gesellius, Lindgren, and Saarinen. His first major work with the firm, the Finnish pavilion at the World Fair of 1900, exhibited an extraordinary convergence of stylistic influences: Finnish wooden architecture, the British Gothic Revival, and the Jugendstil. He worked on the extensive city-planning project of Munksnäs-Haga and later published a book on the subject. In January 1911 he became a consultant in city planning for Reval, Estonia and was invited to Budapest to advise in city development. In 1912, a brochure written by Saarinen about the planning problems of Budapest was published.
+Eliel Saarinen moved to the United States in 1923 and after he became president of the Cranbrook Academy of Art in 1932. 
+He became a professor in the University of Michigan's Architecture Department; today a professorship at Michigan's A. Alfred Taubman College of Architecture and Urban Planning is named for him, and the College holds an annual lecture series in his honor.
+</blockquote>
 </p><p>
 
+<br>
+</p><p></div>
  </p></div>                      
 </section>
 
+<script>
 
+function v1(){
+
+$("#sedia").hide("slow");
+$("#sedia-model").show();
+$("#code1").show("slow");
+
+}
+
+function b1(){
+
+$("#sedia").show("slow");
+$("#sedia-model").hide();
+$("#code1").hide("slow");
+
+}
+
+</script>
 
 <section id="side_chair" class="anchor" ><div class="page-header">
 <br>
@@ -111,28 +132,34 @@ Cranbrook 1929 - 30</strong>
 
 
 </p><p>
-
-Eliel Saarinen designed this chair for the dining 
+<blockquote>Eliel Saarinen designed this chair for the dining 
 room of his Cranbrook home.
 The fluid lines and restrained elegance are typical 
 for Saarinen's work.
-
+</blockquote>
 </p><p>
+<button id="show-model" class="btn btn-primary" onclick="v1()">Show model & code</button>
+
+
+<a style="color:white" onclick="b1()" href="#back"><i class="icon-chevron-right"></i> Back</a>
 
 </p></div>
 
+
 <div class="span6">
 
-<img id="sedia" src="images/image1.jpg"> 
+<img id="sedia" class="img-polaroid" src="images/image1.jpg"> 
+<img id="sedia-model" src="images/Selezione_013.png" style="display:none;border-radius:20px"> 
 
 </div>
 </div>
 
 <p>
+<div id="code1" style="display:none">
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
 $ git checkout gh-pages
-</code></pre>
+</code></pre></div>
 </section>
 </p>
 
@@ -140,11 +167,21 @@ $ git checkout gh-pages
 
 function v(){
 
-$("#vecchiaImg").hide("fast");
+$("#vecchiaImg").hide("slow");
 $("#selezione013").show();
-$("#code").show();
+$("#code").show("slow");
 
 }
+
+function b(){
+
+$("#vecchiaImg").show("slow");
+$("#selezione013").hide();
+$("#code").hide("slow");
+
+}
+
+
 
 </script>
 <section id="dining_table" class="anchor" ><div class="page-header">
@@ -157,9 +194,9 @@ $("#code").show();
 
 
 <br>
-<img id="vecchiaImg" src="images/furn_diningtable.jpg"> 
+<img id="vecchiaImg" class="img-polaroid" src="images/furn_diningtable.jpg"> 
 
-<img  id="selezione013" src="images/Selezione_013.png" style="display:none"> 
+<img  id="selezione013"  src="images/Selezione_015.png" style="border-radius:20px;display:none;"> 
 
 
 
@@ -172,15 +209,16 @@ $("#code").show();
 Cranbrook 1929 - 30</strong>
 <br>
 <p>
-Eliel Saarinen designed this table for the 
+<blockquote>Eliel Saarinen designed this table for the 
 dining room of his home in Cranbrook.
 This table is a proof of skillfull handicraft and
 beautiful design.
+</blockquote>
 </p>
+<p></p>
+<button id="show-model" class="btn btn-primary" onclick="v()">Show model & code</button>
 
-<button id="show-model" class="btn btn-primary" onclick="v()">Show relative model</button>
-
-
+<a style="color:white" onclick="b()" href="#back"><i class="icon-chevron-right"></i> Back</a>
 
 </div>
 </div>
