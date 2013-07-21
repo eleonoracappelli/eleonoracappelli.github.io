@@ -372,7 +372,7 @@ mezzo_dietro = COLOR([3,3,3])(b_Dom2D([s12[1],s12_s1,s1[1]]))
 schien1 = STRUCT([iniz_s,s_s1,fin_s2,s2_s12,mezzo,fin_s2_dietro,s2_s12_dietro,s_s1_dietro,iniz_s_dietro,mezzo_dietro,linee_schienale1,linee_schienale])
 
 
-sedia = STRUCT([schien,schien1,struttura,cuscino,gambe])
+sedia = STRUCT([schien,schien1])
 
 DRAW(sedia)
 

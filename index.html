@@ -105,6 +105,9 @@ function v1(){
 $("#sedia").hide("slow");
 $("#sedia-model").show();
 $("#code1").show("slow");
+$("#dec").show("slow");
+$("#dec1").show("slow");
+$("#dec2").show("slow");
 
 }
 
@@ -113,6 +116,9 @@ function b1(){
 $("#sedia").show("slow");
 $("#sedia-model").hide();
 $("#code1").hide("slow");
+$("#dec").hide("slow");
+$("#dec1").hide("slow");
+$("#dec2").hide("slow");
 
 }
 
@@ -168,6 +174,70 @@ sedia2 = T([1])([-4])(R([0,1])([PI])(sedia))
 
 DRAW(sedia2)
 </code></pre></div>
+
+<p></p>
+<div id="dec"  class="row-fluid" style="display:none">
+  <div class="span6">
+    <img  id=""  src="images/gambe.png" style="border-radius:20px"> 
+    </div>
+
+      <div class="span6">
+<pre><code>..
+  gambaDietro = T([0,1])([0.45,-2])(R([0,1])([PI/2])(gamba))
+  gambaDietro1 = T([0,1])([2.05,0.5])(R([0,1])([-PI/2])(legsx))
+
+  gambe = STRUCT([gambaDietro,gambaDietro1,gamba,legsx,unione_gambe])
+function laterali(..){
+ 
+}
+
+struttura = STRUCT([..laterali()..])</code></pre> 
+
+</div>
+
+</div>
+
+<p></p>
+<div id="dec1"  class="row-fluid" style="display:none">
+  <div class="span6">
+    <img  id=""  src="images/cuscino.png" style="border-radius:20px"> 
+    </div>
+
+      <div class="span6">
+<pre><code>..
+cuscino_part1 = COLOR([0,20/255,60/255])(STRUCT([b_Dom2D([lato_davanti1,lato_davanti]),b_Dom2D([..]))
+
+cuscino = STRUCT([cuscino_part1,cuscino_part2,cuscino_part3,cuscino_part4,cuscino_part5])</code></pre> 
+
+</div>
+
+</div>
+<p></p>
+<div id="dec2"  class="row-fluid" style="display:none">
+  <div class="span6">
+    <img  id=""  src="images/schienale.png" style="border-radius:20px"> 
+    </div>
+
+      <div class="span6">
+<pre><code>function schienale2(back,x,xx,q,qq){
+  var a = []
+
+  ld_fb =beziera_1D(..)
+  ld1_fb =beziera_1D(..)
+
+  a.push(ld_fb)
+  a.push(ld1_fb)
+  return a
+
+}
+s2_s12 = COLOR([3,3,3])(b_Dom2D([s2[0],..]))
+</code></pre> 
+
+</div>
+
+</div>
+
+
 </section>
 </p>
 
@@ -178,7 +248,9 @@ function v(){
 $("#vecchiaImg").hide("slow");
 $("#selezione013").show();
 $("#code").show("slow");
-
+$("#deco").show("slow");
+$("#deco1").show("slow");
+$("#deco2").show("slow");
 }
 
 function b(){
@@ -186,8 +258,9 @@ function b(){
 $("#vecchiaImg").show("slow");
 $("#selezione013").hide();
 $("#code").hide("slow");
-
-}
+$("#deco").hide("slow");
+$("#deco1").hide("slow");
+$("#deco2").hide("slow");}
 
 
 
@@ -236,11 +309,80 @@ beautiful design.
 </div>
 
 <div  id="code" style="display:none">
-<pre><code>
+<pre><code>function beziera_1D(controlp){ return BEZIER(S0)(controlp)}
+
+function b_Dom1D(controlpoints){
+    return MAP(BEZIER(S0)(controlpoints))(dom1D)
+}
+
 tavolo = STRUCT([tavolo_tondo,Base,ottagono,COLOR([0,29/255,63/255])(piedini),colonne]))
 
 DRAW(tavolo)
 </code></pre> </div>
+
+
+<div id="deco"  class="row-fluid" style="display:none">
+  <div class="span6">
+    <img  id="selezione013"  src="images/ottagono.png" style="border-radius:20px"> 
+    </div>
+
+      <div class="span6">
+<pre><code>var ott = STRUCT(REPLICA(8)([spicchioOttagono,R([0,1])(PI/4)]))
+var spess = STRUCT(REPLICA(8)([spessoreOttagono,R([0,1])(PI/4)]))
+..
+var ottagono = STRUCT([COLOR([3,3,3])(ott),contornoOttagono,COLOR([0,29/255,63/255])(ottSotto),COLOR([0,49/255,83/255])(spess)])
+
+piedini =  STRUCT(REPLICA(8)([STRUCT([ss1,ss,basePiede1,basePiede]),R([0,1])(PI/4)]))</code></pre> 
+
+</div>
+
+</div>
+<p></p>
+
+<div id="deco1"  class="row-fluid" style="display:none">
+  <div class="span6">
+    <img  id="selezione013"  src="images/disco.png" style="border-radius:20px"> 
+    </div>
+
+      <div class="span6">
+<pre><code>
+var Tavolo = function(spessore){
+    ...
+    return tavolo
+}
+
+t = Tavolo(0)
+t_1 = Tavolo(-0.08)])
+</code></pre> 
+
+</div>
+
+</div>
+
+<p></p>
+<div id="deco2"  class="row-fluid" style="display:none">
+  <div class="span6">
+    <img  id="selezione013"  src="images/colonne.png" style="border-radius:20px"> 
+    </div>
+
+      <div class="span6">
+<pre><code>var colonna = STRUCT([col,COLOR([0,29/255,63/255])(linee)])
+
+var colonnaBase = STRUCT([colonna,stondeggiamento])
+
+var colonnaR = R([0,1])([PI/2])(colonnaBase)
+
+var colonnaR1 = R([0,1])([PI/2])(colonnaR)
+
+var colonnaR2 = R([0,1])([PI/2])(colonnaR1)
+
+var colonne = STRUCT([colonnaBase,colonnaR,colonnaR1,colonnaR2])</code></pre> 
+
+</div>
+
+</div>
+
+
 
 </section>
 
@@ -460,7 +602,7 @@ section img{
 <br>
 <div ><h4>Contact</h4></div>
 
-<li class=""><a href="http://eleonoracappelli.github.io/"><i class="icon-chevron-right"></i>eleonoracappelli.github.io</a></li>
+<li class=""><a href="https://github.com/eleonoracappelli"><i class="icon-chevron-right"></i>eleonoracappelli.github</a></li>
 
 <li class=""><a href="https://www.facebook.com/eleonora.cappelli.50"><i class="icon-chevron-right"></i>Facebook</a></li>
 
