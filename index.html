@@ -28,7 +28,6 @@
 
         <section id="downloads">
           <a href="https://github.com/eleonoracappelli" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-          <a href="tred.html" class="btn btn-github"><span class="icon"></span>View Model</a>
         </section>
       </div>      
     </header>
@@ -40,7 +39,7 @@
       <div class="span3 bs-docs-sidebar"  >
 
 <ul  class="nav nav-list bs-docs-sidenav affix">
-          <li class=""><a href="#task"><i class="icon-chevron-right"></i> Task</a></li>
+          <li class=""><a href="#task"><i class="icon-chevron-right"></i> Target</a></li>
           <li class=""><a href="#eliel"><i class="icon-chevron-right"></i> Eliel Saarinen</a></li>
           <li class=""><a href="#side_chair"><i class="icon-chevron-right"></i> Side Chair</a></li>
           <li class=""><a href="#dining_table"><i class="icon-chevron-right"></i> Dining Table</a></li>
@@ -55,14 +54,15 @@
     
 <section id="task" class="anchor" ><div class="page-header">
 <br>
-            <h2>Task</h2>
+            <h2>Target</h2>
           </div>
 
-<p><blockquote>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</blockquote></p>
+<p><blockquote>The target of the project is to create a model of an object in Plasm.js chosen from modular furniture system or a desinger of the twentieth century.</blockquote></p>
+  <br>
+<p><blockquote>I chose to reproduce two objects of the Finnish architect Eliel Saarinen.
+In particular, I modeled the Dining Table and the Side Chair that
+Eliel designed for his home in Cranbrook Academy</blockquote></p>
 
-
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
 </section>
 
@@ -141,24 +141,32 @@ for Saarinen's work.
 <button id="show-model" class="btn btn-primary" onclick="v1()">Show model & code</button>
 
 
-<a style="color:white" onclick="b1()" href="#back"><i class="icon-chevron-right"></i> Back</a>
+<a style="color:white" onclick="b1()" href="#back"><i class="icon-chevron-right"></i>Back</a>
 
-</p></div>
+</p>
+<p>
+<a href="tred_sedia.html" class="btn btn-github"><span class="icon"></span>View Chair on Plasm.js</a>
+
+</div>
 
 
 <div class="span6">
 
 <img id="sedia" class="img-polaroid" src="images/image1.jpg"> 
-<img id="sedia-model" src="images/Selezione_013.png" style="display:none;border-radius:20px"> 
+<img id="sedia-model" src="images/Selezione_016.png" style="display:none;border-radius:20px"> 
 
 </div>
 </div>
 
 <p>
 <div id="code1" style="display:none">
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>sedia = STRUCT([schien,schien1,struttura,cuscino,gambe])
+
+DRAW(sedia)
+
+sedia2 = T([1])([-4])(R([0,1])([PI])(sedia))
+
+DRAW(sedia2)
 </code></pre></div>
 </section>
 </p>
@@ -196,7 +204,7 @@ $("#code").hide("slow");
 <br>
 <img id="vecchiaImg" class="img-polaroid" src="images/furn_diningtable.jpg"> 
 
-<img  id="selezione013"  src="images/Selezione_015.png" style="border-radius:20px;display:none;"> 
+<img  id="selezione013"  src="images/Selezione_026.png" style="border-radius:20px;display:none;"> 
 
 
 
@@ -215,18 +223,23 @@ This table is a proof of skillfull handicraft and
 beautiful design.
 </blockquote>
 </p>
-<p></p>
+<p>
 <button id="show-model" class="btn btn-primary" onclick="v()">Show model & code</button>
 
-<a style="color:white" onclick="b()" href="#back"><i class="icon-chevron-right"></i> Back</a>
+<a style="color:white" onclick="b()" href="#back"><i class="icon-chevron-right"></i>Back</a>
+</p>
+<p>
+<a href="tred.html" class="btn btn-github"><span class="icon"></span>View Table on Plasm.js</a>
+
 
 </div>
 </div>
 
 <div  id="code" style="display:none">
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>
+tavolo = STRUCT([tavolo_tondo,Base,ottagono,COLOR([0,29/255,63/255])(piedini),colonne]))
+
+DRAW(tavolo)
 </code></pre> </div>
 
 </section>
@@ -287,6 +300,21 @@ section img{
                       
                     </div>
                   </div>
+                  <div class="item ">
+                    <img id="imgInCarousel" src="images/sedie1.jpg" alt="">
+                    <div class="carousel-caption">
+                      <h4>Side chair</h4>
+                      
+                    </div>
+                  </div>
+<div class="item ">
+                    <img id="imgInCarousel" src="images/sedia.jpg" alt="">
+                    <div class="carousel-caption">
+                      <h4>Side chair</h4>
+                      
+                    </div>
+                  </div>
+
 
 
 
@@ -309,13 +337,22 @@ section img{
     <li data-target="#myC" data-slide-to="1"></li>
     <li data-target="#myC" data-slide-to="2"></li>
     <li data-target="#myC" data-slide-to="3"></li>
+     <li data-target="#myC" data-slide-to="4"></li>
+    <li data-target="#myC" data-slide-to="5"></li>
+    <li data-target="#myC" data-slide-to="6"></li>
+     <li data-target="#myC" data-slide-to="7"></li>
+    <li data-target="#myC" data-slide-to="8"></li>
+    <li data-target="#myC" data-slide-to="9"></li>
+     <li data-target="#myC" data-slide-to="10"></li>
+    <li data-target="#myC" data-slide-to="11"></li>
+    <li data-target="#myC" data-slide-to="12"></li>
   </ol>
   <!-- Carousel items -->
   <div class="carousel-inner">
 <div class="item active">
-                    <img id="imgInCarousel" src="images/Selezione_015.png" alt="">
+                    <img id="imgInCarousel" src="images/Selezione_024.png" alt="">
                     <div class="carousel-caption">
-                      <h4>Dining table &amp; Side chair</h4>
+                      <h4>Dining table</h4>
                       
                     </div>
                   </div>
@@ -323,7 +360,7 @@ section img{
 <div class="item ">
                     <img id="imgInCarousel" src="images/Selezione_013.png" alt="">
                     <div class="carousel-caption">
-                      <h4>Dining table &amp; Side chair</h4>
+                      <h4>Dining table</h4>
                       
                     </div>
                   </div>
@@ -331,20 +368,86 @@ section img{
 <div class="item ">
                     <img id="imgInCarousel" src="images/Selezione_014.png" alt="">
                     <div class="carousel-caption">
-                      <h4>Dining table &amp; Side chair</h4>
+                      <h4>Dining table</h4>
                       
                     </div>
                   </div>
 
 <div class="item ">
-                    <img id="imgInCarousel" src="images/eliel.jpg" alt="">
+                    <img id="imgInCarousel" src="images/Selezione_025.png" alt="">
                     <div class="carousel-caption">
-                      <h4>Dining table &amp; Side chair</h4>
+                      <h4>Dining table</h4>
                       
                     </div>
                   </div>
 
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_015.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Dining table</h4>
+                      
+                    </div>
+                  </div>
 
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_027.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Dining table</h4>
+                      
+                    </div>
+                  </div>
+
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_028.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Dining table</h4>
+                      
+                    </div>
+                  </div>
+
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_018.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Side Chair</h4>
+                      
+                    </div>
+                  </div>
+
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_017.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Side Chair</h4>
+                      
+                    </div>
+                  </div>
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_019.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Side Chair</h4>
+                      
+                    </div>
+                  </div>
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_020.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Side Chair</h4>
+                      
+                    </div>
+                  </div>
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_021.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Side Chair</h4>
+                      
+                    </div>
+                  </div>
+<div class="item ">
+                    <img id="imgInCarousel" src="images/Selezione_022.png" alt="">
+                    <div class="carousel-caption">
+                      <h4>Side Chair</h4>
+                      
+                    </div>
+                  </div>
 
   </div>
   <!-- Carousel nav -->
@@ -355,9 +458,14 @@ section img{
 
 </section>
 <br>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact
+<div ><h4>Contact</h4></div>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<li class=""><a href="http://eleonoracappelli.github.io/"><i class="icon-chevron-right"></i>eleonoracappelli.github.io</a></li>
+
+<li class=""><a href="https://www.facebook.com/eleonora.cappelli.50"><i class="icon-chevron-right"></i>Facebook</a></li>
+
+<li class=""><a href="http://www.linkedin.com/pub/eleonora-cappelli/75/893/94b"><i class="icon-chevron-right"></i>LinkedIn</a></li>
+         
       
     </div>
     </div>

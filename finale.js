@@ -77,13 +77,12 @@ var Tavolo = function(spessore){
     return tavolo
 }
 
-DRAW(Tavolo(0))
-DRAW(Tavolo(-0.08))
+
 
 var cerchietto = cerc(0.143,0);
 var cerchione = cerc(0.6,0);
 var cerchi = STRUCT([cerchietto,cerchione])
-DRAW(cerchi)
+
 
 var lineaQuad = b_Dom1D([[2,0.4,0],[1.93,0.386,0]])
 var quadratini = COLOR([0,0,0])(STRUCT(REPLICA(5)([lineaQuad,T([0])([-0.001]),R([0,1])(-0.03928)])))
@@ -91,20 +90,21 @@ var lineaQuad1 = b_Dom1D([[2,-0.395,0],[1.93,-0.382,0]])
 var quadratini1 = COLOR([0,0,0])(STRUCT(REPLICA(6)([lineaQuad1,T([0])([-0.001]),R([0,1])(0.03928)])))
 var quadrati = STRUCT([quadratini1,quadratini])
 var q = COLOR([0,29/255,63/255])(STRUCT(REPLICA(16)([quadrati,R([0,1])(PI/8)])))
-DRAW(q)
+
+
 
 
 var b = cercBez(0.14,-0.01);
 var bb = beziera_1D([[0,0,-0.01]]);
-cerchi = beziera_2D([b,bb])
+cerchii = beziera_2D([b,bb])
 
 var b1 = cercBez(0.14,0.01);
 var bb1 = beziera_1D([[0,0,0.01]]);
 cerchi1 = beziera_2D([b1,bb1]);
 
-var Va = INTERP_S2S(S2)([cerchi,cerchi1]);
+var Va = INTERP_S2S(S2)([cerchii,cerchi1]);
 var VVV =COLOR([4,4,4])(MAP(Va)(uvz));
-DRAW(VVV)
+
 
 var spessore = -0.08
 var lineaCollegamentoSpessore = b_Dom1D([[2,0.4,0],[2,0.4,spessore]])
@@ -116,8 +116,10 @@ var spessoreSpicchio = b_Dom2D([collegamentoSpessore1,collegamentoSpessore])
 var sp = STRUCT([lineaCollegamentoSpessore,COLOR([3,3,3])(spessoreSpicchio)])
 var spessoreTavolo = STRUCT(REPLICA(16)([sp,R([0,1])(PI/8)]))
 
-DRAW(spessoreTavolo)
 
+tavolo_tondo = STRUCT([spessoreTavolo,VVV,q,cerchi,Tavolo(0),Tavolo(-0.08)])
+
+///base
 GRID = SIMPLEX_GRID;
 
 var r = GRID([[-0.5,0.5,-0.5],[1.5],[-0.03,0.04]])
@@ -145,7 +147,7 @@ var base2 =T([0,1,2])([-0.75,-0.75,-2])(STRUCT([b,bb1]))
 
 
 var Base = STRUCT([COLOR([0,29/255,63/255])(base),COLOR([3,3,3])(base3),COLOR([0,29/255,63/255])(base1),COLOR([210/255+1,210/255+1,210/255+1])(base2)])
-DRAW(Base)
+
 
 
 //gamba. davanti
@@ -212,7 +214,6 @@ var spess = STRUCT(REPLICA(8)([spessoreOttagono,R([0,1])(PI/4)]))
 
 var ottagono = STRUCT([COLOR([3,3,3])(ott),contornoOttagono,COLOR([0,29/255,63/255])(ottSotto),COLOR([0,49/255,83/255])(spess)])
 
-DRAW(ottagono)
 
 //piedi
 var curvaPiede = beziera_1D([[1.2,0.5,-2.15+0.03],[1.2,0.3,-2.15+0.03]])
@@ -235,8 +236,7 @@ var basePiede = b_Dom2D([curvaPiede1,beziera_1D([[1,0.5,-2.15],[1,0.3,-2.15]])])
 var basePiede1 = b_Dom2D([curvaPiede3,beziera_1D([[1,-0.5,-2.15],[1,-0.3,-2.15]])])
 
 
-s =  STRUCT(REPLICA(8)([STRUCT([ss1,ss,basePiede1,basePiede]),R([0,1])(PI/4)]))
-DRAW(COLOR([0,29/255,63/255])(s))
+piedini =  STRUCT(REPLICA(8)([STRUCT([ss1,ss,basePiede1,basePiede]),R([0,1])(PI/4)]))
 
 
 //stondeggio base
@@ -287,20 +287,10 @@ var colonnaR2 = R([0,1])([PI/2])(colonnaR1)
 
 var colonne = STRUCT([colonnaBase,colonnaR,colonnaR1,colonnaR2])
 
-DRAW(colonne)
+tavolo = STRUCT([tavolo_tondo,Base,ottagono,COLOR([0,29/255,63/255])(piedini),colonne])
 
-//Pezzo sotto moca
-var latoSx = beziera_1D([[4.071,3,0],[4.59,8,-1.2]])
-var latoDx = beziera_1D([[6.9,3,0.01],[6.42,8,-1.2]])
-var latoSotto = beziera_2D([[4.071,3,0],[5.5,2.8,0],[6.9,3,0.01]])
-var latoSopra = beziera_2D([[4.59,8,-1.2],[5.5,8.3,-1.2],[6.42,8,-1.2]])
+DRAW(tavolo)
 
-var out = MAP(COONS_PATCH([latoSx,latoDx,latoSotto,latoSopra]))(dom2D)
-
-
-b_Dom1D([,0,1.5])
-
-DRAW(b_Dom1D([[0.27,0,1.5], [0.35,0,1], [0.25,0,0.35], [0.22,0,0]]))
 }
 
 
