@@ -166,7 +166,17 @@ for Saarinen's work.
 
 <p>
 <div id="code1" style="display:none">
-<pre><code>sedia = STRUCT([schien,schien1,struttura,cuscino,gambe])
+<pre><code>function beziera_2D(f){ return BEZIER(S1)(f)}
+  function beziera_1D(controlp){ return BEZIER(S0)(controlp)}
+  ..
+  function b_Dom1D(controlpoints){
+    return MAP(BEZIER(S0)(controlpoints))(dom1D)
+  }
+
+  function b_Dom2D(functions){
+    return MAP(BEZIER(S1)(functions))(dom2D) 
+  }
+sedia = STRUCT([schien,schien1,struttura,cuscino,gambe])
 
 DRAW(sedia)
 
@@ -183,15 +193,14 @@ DRAW(sedia2)
 
       <div class="span6">
 <pre><code>..
-  gambaDietro = T([0,1])([0.45,-2])(R([0,1])([PI/2])(gamba))
-  gambaDietro1 = T([0,1])([2.05,0.5])(R([0,1])([-PI/2])(legsx))
+gambaDietrodx = T([0,1])([0.45,-2])(R([0,1])([PI/2])(gambaDx))
+gambaDietrosx = T([0,1])([2.05,0.5])(R([0,1])([-PI/2])(gambaSx))
 
-  gambe = STRUCT([gambaDietro,gambaDietro1,gamba,legsx,unione_gambe])
 function laterali(..){
- 
 }
-
-struttura = STRUCT([..laterali()..])</code></pre> 
+unione_gambe = STRUCT([..laterali()..])
+gambe = STRUCT([gambaDietrodx,gambaDietrosx,gambaDx,gambaSx,unione_gambe])
+</code></pre> 
 
 </div>
 
@@ -442,21 +451,7 @@ section img{
                       
                     </div>
                   </div>
-                  <div class="item ">
-                    <img id="imgInCarousel" src="images/sedie1.jpg" alt="">
-                    <div class="carousel-caption">
-                      <h4>Side chair</h4>
-                      
-                    </div>
-                  </div>
-<div class="item ">
-                    <img id="imgInCarousel" src="images/sedia.jpg" alt="">
-                    <div class="carousel-caption">
-                      <h4>Side chair</h4>
-                      
-                    </div>
-                  </div>
-
+               
 
 
 
@@ -600,8 +595,9 @@ section img{
 
 </section>
 <br>
-<div ><h4>Contact</h4></div>
-
+<div ><span class="label label-success">Contact</span>
+</div>
+<p>
 <li class=""><a href="https://github.com/eleonoracappelli"><i class="icon-chevron-right"></i>eleonoracappelli.github</a></li>
 
 <li class=""><a href="https://www.facebook.com/eleonora.cappelli.50"><i class="icon-chevron-right"></i>Facebook</a></li>
